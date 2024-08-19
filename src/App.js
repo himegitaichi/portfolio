@@ -1,12 +1,26 @@
 import './App.css';
+import BlogPage from './components/BlogPage';
+import Github from './components/Github';
+
 import Header from './components/Header';
+import HomePage from './components/HomePage';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 
 function App() {
   return (
-    <div className="App">
-      <Header />
-    </div>
+    <Router>
+      <div className="App">
+        <Header />
+
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/blog' element={<BlogPage />} />
+          <Route path='/github' element={<Github />} />
+        </Routes>
+        
+      </div>
+    </Router>
   );
 }
 
